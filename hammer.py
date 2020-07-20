@@ -15,7 +15,12 @@ import string
 import sys
 import threading
 import time
-from configs import *
+
+try:
+    from configs import *
+except ImportError:
+    print("Could not import configs file!")
+
 
 import socks
 
@@ -23,7 +28,7 @@ import socks
 THREADS = 1
 
 TARGET, TARGET_PORT, TARGET_HOST = '1.2.3.4', 80, 'example.com'
-WEB_SERVER = "nginx" # nginx or apache2
+WEB_SERVER = "nginx"  # nginx or apache2
 
 ENCODING = 'utf-8'
 logging.basicConfig(format="[%(asctime)s]  %(levelname)s - %(message)s", datefmt="%H:%M:%S", level=logging.INFO)

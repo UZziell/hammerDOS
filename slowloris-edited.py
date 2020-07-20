@@ -5,9 +5,12 @@ import ssl
 import sys
 import threading
 import time
-import configs
 
-from pprint import pprint
+try:
+    from configs import *
+except ImportError:
+    print("Could not import configs! Using global configs instead.")
+
 
 import socks
 

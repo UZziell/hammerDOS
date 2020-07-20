@@ -19,7 +19,8 @@ import time
 try:
     from configs import *
 except ImportError:
-    print("Could not import configs file!")
+    print("Could not import configs! Using global configs instead.")
+
 
 
 import socks

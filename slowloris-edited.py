@@ -17,14 +17,12 @@ import socks
 ################################################## Global Configs ##################################################
 THREADS = 1
 SLEEP = 3
-IP, PORT, HOSTNAME = '1.2.3.4', 80, 'example.com'
 
+IP, PORT, HOSTNAME = '1.2.3.4', 80, 'example.com'
 
 TOR_HOST, TOR_PORT = "localhost", 9050
 
 ENCODING = 'utf-8'
-
-
 logging.basicConfig(
     format="[%(asctime)s]  %(levelname)s - %(message)s", datefmt="%H:%M:%S", level=logging.INFO)
 ####################################################################################################################

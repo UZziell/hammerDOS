@@ -1,2 +1,3 @@
 # hammerDOS
-Simple script to perform DOS attack that operates on IPV4 and TCP over tor network.
+hammerdos just keeps sending get/post requests to the web server via socket module.
+slowloris tries to establish a connection and keep the connection open as long as possible.

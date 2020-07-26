@@ -5,7 +5,7 @@
 
 
 ### Prerequisites
-* tor should be installed and to configured to open a SOCKS proxy.
+* tor should be installed and to configured to open a SOCKS listener on some port.
 * python **pysocks** package 
 
 ### Installing
@@ -14,9 +14,9 @@
 sudo apt update && sudo apt install tor
 ```
 
-2. Configure tor to open SOCKS5 proxy
+2. Configure tor to open SOCKS5 proxy and restarting ther service 
 ```
-echo "SocksPort localhost:9050" | sudo tee -a /etc/tor/torrc
+echo "SocksPort localhost:9050" | sudo tee -a /etc/tor/torrc && sudo systemctl restart tor
 ```
 
 3. installing pysocks using pip:
@@ -35,7 +35,7 @@ Number of simoultanous connections :
 ```
 THREADS = No_of_THREADS
 ```
-Your target info, IP, PORT, HOSTNAME and the WEB_SERVER:
+Your target info: IP, PORT, HOSTNAME and the WEB_SERVER:
 ```
 TARGET, TARGET_PORT, TARGET_HOST = '1.2.3.4', 80, 'example.com'
 WEB_SERVER = "nginx"  # nginx or apache2

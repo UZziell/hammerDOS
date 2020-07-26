@@ -14,7 +14,7 @@
 sudo apt update && sudo apt install tor
 ```
 
-2. Configure tor to open SOCKS5 proxy and restarting ther service 
+2. Configure tor to open SOCKS5 proxy and restarting the service 
 ```
 echo "SocksPort localhost:9050" | sudo tee -a /etc/tor/torrc && sudo systemctl restart tor
 ```

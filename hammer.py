@@ -7,6 +7,7 @@
 # ** Global configs:
 #       SET TARGET, TARGET_PORT and TARGET_HOST variables based on your target, also set tor listening port (TOR_PORT)
 # ***** DOES NOT WORK WITHOUT TOR *****
+
 import logging
 import os
 import random

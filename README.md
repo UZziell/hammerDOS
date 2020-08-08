@@ -40,7 +40,7 @@ Your target info: IP, PORT, HOSTNAME and the WEB_SERVER:
 TARGET, TARGET_PORT, TARGET_HOST = '1.2.3.4', 80, 'example.com'
 WEB_SERVER = "nginx"  # nginx or apache2
 ```
-and run:
+and run the script:
 ```
 python hammer.py
 ```

